@@ -1,6 +1,6 @@
 (ns functionalist)
 
-;; --- Level 3: The Functionalist — Power of Functions & Recursion ---
+;; --- Level 2: The Functionalist — Power of Functions & Recursion ---
 ;; Inspired by Clojure for the Brave and True, Chapter 3
 ;;
 ;; Evaluate forms with your REPL to explore each concept.
@@ -50,7 +50,7 @@
       (recur (dec i)))))
 
 ;; Try:
-;; (countdown 5)
+(countdown 5)
 
 ;; Mini-Quest: the power function
 
@@ -62,6 +62,6 @@
       (recur (* acc base) (dec e)))))
 
 ;; Try:
-;; (power 2 5) ; => 32
+(power 2 5) ; => 32
 
-"Level 3 complete!"
+"Level 2 complete!"
