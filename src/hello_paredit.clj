@@ -1,4 +1,4 @@
-(ns get-started.hello-paredit)
+(ns hello-paredit)
 
 ;; Start with loading this file
 ;; Ctrl+Alt+C Enter
