@@ -130,5 +130,14 @@ error-message
 ; add items to the beginning of a sequence, OR writing a macro -> use List
 ; Otherwise -> Vector
 
-;; LAST PAGE: 46 Sets
+; Sets -> hash-set and sorted-set, for storing unique value
+; hash-set
+#{"1" 2 3}
+(hash-set 1 1 2 2)
+(conj #{:a :b} :b)
+(set [3 3 3 4 4])
+
+(contains? #{:a :b} :a)
+
+;; LAST PAGE: 48
 
