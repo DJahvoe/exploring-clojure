@@ -139,5 +139,66 @@ error-message
 
 (contains? #{:a :b} :a)
 
-;; LAST PAGE: 48
+;; Functions
+(+ 1 2 3 4)
+(* 1 2 3 4)
+(first [1 2 3 4])
+
+(or + -)
+((or + -) 1 2 3)
+((and (= 1 1) +) 1 2 3)
+((first [+ 0]) 1 2 3)
+
+; invalid function call
+;; (1 2 3 4)
+
+; Higher-order functions
+(inc 1.1)
+(map inc [0 1 2 3])
+
+; Function Calls, Macro Calls, and Special Forms
+; special forms: if, function
+(defn this-is-fn-name
+  "This is function docs"
+  [param1]
+  (str "test" param1))
+
+; parameters and arity
+; one-param = 1-arity
+(this-is-fn-name "hello")
+
+; arity-overloading = parameter overloading
+(defn multi-arity
+  ;; 3-arity arguments
+  ([first second third]
+   (str "function with 3 arguments: " first second third))
+  ;; 2-arity arguments
+  ([first second]
+   (str "function with 2 arguments: " first second))
+  ;; 1-arity argument
+  ([first]
+   (str "the only argument: " first))
+  )
+
+(multi-arity "hello" "world")
+
+; rest parameter
+(defn increase-by-one
+  [num]
+  (+ num 1))
+
+(defn increase-all-by-one
+  [& nums]
+  (map increase-by-one nums))
+(increase-all-by-one 1 2 3)
+
+; mix normal with rest parameter, rest come last
+(defn test-mix-param
+  [normal & rest]
+  (str "[" normal "] " rest)
+  )
+(test-mix-param "Fruits" "Apple" "Banana")
+
+
+;; LAST PAGE: 54 Destructuring
 
