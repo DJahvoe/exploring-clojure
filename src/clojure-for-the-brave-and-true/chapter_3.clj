@@ -199,6 +199,37 @@ error-message
   )
 (test-mix-param "Fruits" "Apple" "Banana")
 
+; Destructuring
+(defn my-first
+  [[first-thing]]
+  first-thing)
 
-;; LAST PAGE: 54 Destructuring
+(my-first ["first", "second", "third"])
+
+(defn chooser
+  [[first-choice second-choice & unimportant-choices]]
+  (println (str "First Choice - " first-choice))
+  (println (str "Second Choice - " second-choice))
+  (println (str "Others - " (clojure.string/join ", " unimportant-choices))))
+
+(chooser ["Hello" "World" "This" "Is" "Not" "Important"])
+
+(defn announce-treasure-location
+  [{lat :lat lng :lng}]
+  (println (str "Treasure lat: " lat))
+  (println (str "Treasure lng: " lng)))
+(announce-treasure-location {:lat 28.22 :lng 81.33})
+
+(defn steer-ship
+  [treasure-location]
+  (println treasure-location))
+(defn receive-treasure-location
+  [{:keys [lat lng] :as treasure-location}]
+  (println (str "Treasure lat: " lat)) 
+  (println (str "Treasure lng: " lng))
+  (steer-ship treasure-location))
+(def treasure-location {:lat 28.22 :lng 81.33})
+(receive-treasure-location treasure-location)
+
+;; LAST PAGE: 56 Function Body
 
